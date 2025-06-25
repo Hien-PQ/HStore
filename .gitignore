@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# If you are using a package manager that creates a lock file, you may want to keep
+# the lock file in version control, but ignore the node_modules directory.
+# Uncomment the following line if you want to ignore node_modules directories
+# in all subdirectories.
+# node_modules/
+client/node_modules
+server/node_modules
+.env
+.client/.env
+.server/.env
