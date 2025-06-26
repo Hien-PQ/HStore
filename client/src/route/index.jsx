@@ -24,6 +24,7 @@ import CheckoutPage from "../pages/CheckoutPage";
 import Success from "../pages/Success";
 import Cancel from "../pages/Cancel";
 import About from "../pages/About";
+import Admin from "../layouts/Admin";
 
 const router = createBrowserRouter([
     {
@@ -67,12 +68,16 @@ const router = createBrowserRouter([
                 element: <About />
             },
             {
-                path: "dashboard",
-                element: <Dashboard />,
+                path: "admin",
+                element: <Admin />,
                 children: [
                     {
+                        path: "",
+                        element: <AdminPermision><Profile /></AdminPermision>
+                    },
+                    {
                         path: "profile",
-                        element: <Profile />
+                        element: <AdminPermision><Profile /></AdminPermision>
                     },
                     {
                         path: "myorders",
@@ -98,6 +103,40 @@ const router = createBrowserRouter([
                         path: 'product',
                         element: <AdminPermision><ProductAdmin /></AdminPermision>
                     }
+                ]
+            },
+            {
+                path: "dashboard",
+                element: <Dashboard />,
+                children: [
+                    {
+                        path: "profile",
+                        element: <Profile />
+                    },
+                    {
+                        path: "myorders",
+                        element: <MyOrders />
+                    },
+                    {
+                        path: "address",
+                        element: <Address />
+                    },
+                    // {
+                    //     path: 'category',
+                    //     element: <AdminPermision><CategoryPage /></AdminPermision>
+                    // },
+                    // {
+                    //     path: "subcategory",
+                    //     element: <AdminPermision><SubCategoryPage /></AdminPermision>
+                    // },
+                    // {
+                    //     path: 'upload-product',
+                    //     element: <AdminPermision><UploadProduct /></AdminPermision>
+                    // },
+                    // {
+                    //     path: 'product',
+                    //     element: <AdminPermision><ProductAdmin /></AdminPermision>
+                    // }
                 ]
             },
             {
