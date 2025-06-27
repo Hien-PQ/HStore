@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import noDataImage from '../assets/nothing here yet.webp'
 
 const NoData = () => {
@@ -7,7 +7,7 @@ const NoData = () => {
       <img
         src={noDataImage}
         alt='no data'
-        className='w-36' 
+        className='w-36'
       />
       <p className='text-neutral-500'>No Data</p>
     </div>

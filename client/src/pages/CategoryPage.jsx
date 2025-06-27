@@ -73,7 +73,7 @@ const CategoryPage = () => {
     }
 
     return (
-        <section className=''>
+        <section className='bg-blue-50 h-full'>
             <div className='p-2   bg-white shadow-md flex items-center justify-between'>
                 <h2 className='font-semibold'>Category</h2>
                 <button onClick={() => setOpenUploadCategory(true)} className='text-sm border border-primary-200 hover:bg-primary-200 px-3 py-1 rounded'>Add Category</button>
@@ -88,14 +88,14 @@ const CategoryPage = () => {
                 {
                     categoryData.map((category) => {
                         return (
-                            <div className='w-32 h-48 rounded shadow-md ' key={category._id}>
+                            <div className='w-36 h-56 px-2 rounded shadow-md bg-white' key={category._id}>
                                 <img
                                     alt={category.name}
                                     src={category.image}
-                                    className='w-full object-scale-down h-32 rounded-t cursor-pointer hover:opacity-80 transition-opacity duration-200'
+                                    className='mt-4 w-full object-scale-down h-32 rounded-t cursor-pointer hover:opacity-80 transition-opacity duration-200'
                                 />
-                                <h3 className='text-sm font-semibold text-gray-500 truncate'>{category.name}</h3>
-                                <div className='items-center h-9 flex gap-2'>
+                                <h3 className='text-sm my-2 font-semibold text-gray-500 truncate bg-white'>{category.name}</h3>
+                                <div className='items-center h-9 flex gap-2 '>
                                     <button onClick={() => {
                                         setOpenEdit(true)
                                         setEditData(category)

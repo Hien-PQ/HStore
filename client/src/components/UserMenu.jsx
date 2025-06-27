@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Divider from './Divider'
@@ -92,16 +92,16 @@ const UserMenu = ({ close }) => {
           )
         }
         {
-          !isAdmin(user.role) && (
-            <Link onClick={handleClose} to={"/dashboard/myorders"} className='px-2 hover:bg-orange-200 py-1'>My Orders</Link>
+          // !isAdmin(user.role) && (
+          <Link onClick={handleClose} to={"/dashboard/myorders"} className='px-2 hover:bg-orange-200 py-1'>My Orders</Link>
 
-          )
+          // )
         }
         {
-          !isAdmin(user.role) && (
-            <Link onClick={handleClose} to={"/dashboard/address"} className='px-2 hover:bg-orange-200 py-1'>Save Address</Link>
+          // !isAdmin(user.role) && (
+          <Link onClick={handleClose} to={"/dashboard/address"} className='px-2 hover:bg-orange-200 py-1'>Save Address</Link>
 
-          )
+          // )
         }
         {/* <Link onClick={handleClose} to={"/dashboard/profile"} className='px-2 hover:bg-orange-200 py-1'>Profile</Link> */}
 
