@@ -1,7 +1,7 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { useGlobalContext } from '../provider/GlobalProvider'
 import { DisplayPriceInRupees } from '../utils/DisplayPriceInRupees'
-import AddAddress from '../components/AddAddress'
+// import AddAddress from '../components/AddAddress'
 import { useSelector } from 'react-redux'
 import AxiosToastError from '../utils/AxiosToastError'
 import Axios from '../utils/Axios'
@@ -9,13 +9,17 @@ import SummaryApi from '../common/SummaryApi'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js'
+import NoData from '../components/NoData'
 
 const CheckoutPage = () => {
   const { notDiscountTotalPrice, totalPrice, totalQty, fetchCartItem, fetchOrder } = useGlobalContext()
-  const [openAddress, setOpenAddress] = useState(false)
-  const addressList = useSelector(state => state.addresses.addressList)
-  const [selectAddress, setSelectAddress] = useState(0)
+  // const [openAddress, setOpenAddress] = useState(false)
+  // const addressList = useSelector(state => state.addresses.addressList)
+  // const [selectAddress, setSelectAddress] = useState(0)
   const cartItemsList = useSelector(state => state.cartItem.cart)
+  // add
+  const orders = useSelector(state => state.orders.order)
+
   const navigate = useNavigate()
 
   const handleCashOnDelivery = async () => {
@@ -24,7 +28,7 @@ const CheckoutPage = () => {
         ...SummaryApi.CashOnDeliveryOrder,
         data: {
           list_items: cartItemsList,
-          addressId: addressList[selectAddress]?._id,
+          // addressId: addressList[selectAddress]?._id,
           subTotalAmt: totalPrice,
           totalAmt: totalPrice,
         }
@@ -62,7 +66,7 @@ const CheckoutPage = () => {
         ...SummaryApi.payment_url,
         data: {
           list_items: cartItemsList,
-          addressId: addressList[selectAddress]?._id,
+          // addressId: addressList[selectAddress]?._id,
           subTotalAmt: totalPrice,
           totalAmt: totalPrice,
         }
@@ -83,10 +87,10 @@ const CheckoutPage = () => {
     }
   }
   return (
-    <section className='bg-blue-50'>
-      <div className='container mx-auto p-4 flex flex-col lg:flex-row w-full gap-5 justify-between'>
-        <div className='w-full'>
-          {/***address***/}
+    <section className='bg-blue-50 flex '>
+      <div className='container mx-auto p-4 py-10 flex flex-col justify-between items-center'>
+
+        {/* <div className='w-full'>
           <h3 className='text-lg font-semibold'>Choose your address</h3>
           <div className='bg-white p-2 grid gap-4'>
             {
@@ -116,7 +120,7 @@ const CheckoutPage = () => {
 
 
 
-        </div>
+        </div> */}
 
         <div className='w-full max-w-md bg-white py-4 px-2'>
           {/**summary**/}
@@ -146,14 +150,44 @@ const CheckoutPage = () => {
             <button className='py-2 px-4 border-2 border-green-600 font-semibold text-green-600 hover:bg-green-600 hover:text-white' onClick={handleCashOnDelivery}>Cash on Delivery</button>
           </div>
         </div>
+
+        <div className='w-full max-w-md mt-4 bg-white p-4'>
+          <div className='bg-gray-100 shadow-md p-3 font-semibold'>
+            <h1>Details Orders</h1>
+          </div>
+          {
+            !orders[0] && (
+              <NoData />
+            )
+          }
+          {
+            orders.map((order, index) => {
+              return (
+                <div key={order._id + index + "order"} className='order rounded p-4 text-sm'>
+                  <p>Order No : {order?.orderId}</p>
+                  <div className='flex gap-3'>
+                    <img
+                      src={order.product_details.image[0]}
+                      className='w-14 h-14'
+                    />
+                    <p className='font-medium'>{order.product_details.name}</p>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+
       </div>
 
 
-      {
+
+
+      {/* {
         openAddress && (
           <AddAddress close={() => setOpenAddress(false)} />
         )
-      }
+      } */}
     </section>
   )
 }

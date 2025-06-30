@@ -101,6 +101,12 @@ const Header = () => {
                                         <div className='relative'>
                                             <div onClick={() => setOpenUserMenu(preve => !preve)} className='flex select-none items-center gap-1 cursor-pointer'>
                                                 <p>Account</p>
+                                                {/* <div className='w-8 h-8 rounded-full overflow-hidden'>
+                                                <img
+                                                    src={user?.profileImage || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}
+                                                    alt='profile'
+                                                />
+                                            </div> */}
                                                 {
                                                     openUserMenu ? (
                                                         <GoTriangleUp size={25} />
@@ -158,7 +164,7 @@ const Header = () => {
                     <DisplayCartItem close={() => setOpenCartSection(false)} />
                 )
             }
-        </header>
+        </header >
     )
 }
 
