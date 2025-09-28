@@ -28,6 +28,10 @@ dist-ssr
 # Uncomment the following line if you want to ignore node_modules directories
 # in all subdirectories.
 # node_modules/
+app/my-app
+# app/my-app/node_modules
+mobile/node_modules
+app/node_modules
 client/node_modules
 server/node_modules
 .env

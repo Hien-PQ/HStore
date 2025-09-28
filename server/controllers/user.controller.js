@@ -332,7 +332,7 @@ export async function verifyForgotPasswordOtp(request, response) {
 
         if (!email || !otp) {
             return response.status(400).json({
-                message: "Provide required field email, otp.",
+                message: "Provide required field email, OTP.",
                 error: true,
                 success: false
             })
@@ -352,7 +352,7 @@ export async function verifyForgotPasswordOtp(request, response) {
 
         if (user.forgot_password_expiry < currentTime) {
             return response.status(400).json({
-                message: "Otp is expired",
+                message: "OTP is expired",
                 error: true,
                 success: false
             })
@@ -360,7 +360,7 @@ export async function verifyForgotPasswordOtp(request, response) {
 
         if (otp !== user.forgot_password_otp) {
             return response.status(400).json({
-                message: "Invalid otp",
+                message: "Invalid OTP",
                 error: true,
                 success: false
             })

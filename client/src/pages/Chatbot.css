@@ -1,0 +1,7 @@
+.chatbot { width: 100%; max-width: 400px; border: 1px solid #ddd; padding: 12px; border-radius: 8px;}
+.chat-window { height: 300px; overflow-y: auto; background: #fafafa; padding: 8px; margin-bottom: 8px; }
+.msg.user { text-align: right; color: #007bff; margin: 6px 0; }
+.msg.bot { text-align: left; color: #333; margin: 6px 0; }
+.input-area { display: flex; }
+.input-area input { flex: 1; padding: 6px; }
+.input-area button { margin-left: 6px; padding: 6px 12px; }

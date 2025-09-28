@@ -26,6 +26,10 @@ import Cancel from "../pages/Cancel";
 import About from "../pages/About";
 import Admin from "../layouts/Admin";
 import Charts from "../pages/Charts";
+import Blogs from "../pages/Blogs";
+import AnExample from "../pages/AnExample";
+import Notification from "../pages/Notification";
+import Chatbot from "../pages/Chatbot";
 
 const router = createBrowserRouter([
     {
@@ -65,12 +69,28 @@ const router = createBrowserRouter([
                 element: <UserMenuMobile />
             },
             {
-                path: "about",
+                path: "contact",
                 element: <About />
             },
+            // {
+            //     path: "charts",
+            //     element: <Charts />
+            // },
             {
-                path: "charts",
-                element: <Charts />
+                path: "about-us",
+                element: <Blogs />
+            },
+            {
+                path: "example",
+                element: <AnExample />
+            },
+            {
+                path: "notification",
+                element: <Notification />
+            },
+            {
+                path: "chatbot",
+                element: <Chatbot />
             },
             {
                 path: "admin",

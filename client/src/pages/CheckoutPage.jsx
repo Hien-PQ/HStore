@@ -87,7 +87,7 @@ const CheckoutPage = () => {
     }
   }
   return (
-    <section className='bg-blue-50 flex '>
+    <section className='bg-blue-50 flex flex-col min-h-screen justify-between'>
       <div className='container mx-auto p-4 py-10 flex flex-col justify-between items-center'>
 
         {/* <div className='w-full'>
@@ -179,8 +179,6 @@ const CheckoutPage = () => {
         </div>
 
       </div>
-
-
 
 
       {/* {

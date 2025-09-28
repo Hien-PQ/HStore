@@ -9,7 +9,7 @@ const forgotPasswordTemplate = ({ name, otp }) => {
     <p>This otp is valid for 1 hour only. Enter this otp in the HStore website to proceed with resetting your password.</p>
     <br/>
     </br>
-    <p>Thanks</p>
+    <p>Thank you for your belief and using our services</p>
     <p>HStore</p>
 </div>
     `

@@ -49,7 +49,7 @@ const UserProfileAvatarEdit = ({ close }) => {
                 <button onClick={close} className='text-neutral-800 w-fit block ml-auto'>
                     <IoClose size={20} />
                 </button>
-                <div className='w-40 h-40 bg-red-500 flex items-center justify-center rounded-full overflow-hidden drop-shadow-sm'>
+                <div className='w-40 h-40 flex items-center justify-center rounded-full overflow-hidden drop-shadow-sm'>
                     {
                         user.avatar ? (
                             <img

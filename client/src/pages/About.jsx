@@ -1,86 +1,137 @@
-import logo from '../assets/logo.png';
-import Footer from '../components/Footer';
-import Feature from './Feature';
+import { FcSms, FcPhone } from "react-icons/fc";
+import { IoLocationSharp } from "react-icons/io5";
 
-const features = [
-    {
-        title: 'Built with React',
-        description: 'This project is built using React and Tailwind CSS, showcasing modern web development practices.',
-    },
-    {
-        title: 'Responsive Design',
-        description: 'The application is designed to be fully responsive, ensuring a great user experience on all devices.',
-    },
-    {
-        title: 'Tailwind CSS',
-        description: 'Utilizes Tailwind CSS for styling, allowing for rapid UI development with utility-first classes.',
-    },
-    {
-        title: 'Easy to Customize',
-        description: 'The project structure is simple and easy to customize, making it suitable for various applications.',
-    },
-    {
-        title: 'Open Source',
-        description: 'This project is open source and available for contributions and improvements.',
-    },
-    {
-        title: 'Cross-Browser Compatibility',
-        description: 'The application is tested and works seamlessly across all modern browsers.',
-    }
-    // {
-    //     title: 'npm run start',
-    //     description: 'Run the React app in development mode with live reloading.',
-    // },
-    // {
-    //     title: 'npm run build',
-    //     description: 'Bundles the React app for deployment in production environment.',
-    // },
-    // {
-    //     title: 'npm run inline',
-    //     description: 'Inline all CSS and JS in a single minfied file.',
-    // },
-];
-
-const About = () => (
-    //   return (
-    <div className='flex min-h-screen flex-col justify-center bg-gray-100 py-6 sm:py-12'>
-        <div className='relative py-3 sm:mx-auto sm:max-w-xl'>
-            <div className='to-light-blue-500 absolute inset-0 -skew-y-6 transform bg-gradient-to-r from-cyan-400 shadow-lg sm:-rotate-6 sm:skew-y-0 sm:rounded-3xl' />
-            <div className='relative bg-white px-4 py-10 shadow-lg sm:rounded-3xl sm:p-20'>
-                <div className='mx-auto max-w-md'>
-                    <div>
-                        <a href='https://digitalinspiration.com/'>
-                            <img src={logo} className='h-7 sm:h-8' alt='Logo' />
-                        </a>
-                    </div>
-                    <div className='divide-y divide-gray-200'>
-                        <div className='space-y-5 py-8 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7'>
-                            <h1 className='text-lg font-semibold text-cyan-600'>
-                                About This Project
-                            </h1>
-                            <p>
-                                This project is a simple React application that demonstrates the use of Tailwind CSS for styling and layout.
-                                {/* It includes a set of features that showcase how to build a modern web application with React and Tailwind CSS. */}
-                            </p>
-                            <div className='list-disc space-y-2'>
-                                {features.map((feature) => (
-                                    <Feature
-                                        key={feature.title}
-                                        title={feature.title}
-                                        description={feature.description}
-                                    />
-                                ))}
-                            </div>
-                            <p className='text-sm font-medium text-cyan-500'>
-                                Built with Tailwind CSS 4 and React 19.
-                            </p>
-                        </div>
-                        <Footer />
+const About = () => {
+    return (
+        <div className="">
+            <div className="w-full relative h-[500px]">
+                <img
+                    className="absolute top-0 left-0 z-0 static object-cover h-full w-full"
+                    src="https://images6.alphacoders.com/109/1098127.jpg"
+                    alt="nature image"
+                />
+                <h2
+                    className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-orange-100 font-[cursive] text-6xl font-bold"
+                >
+                    CONTACT US
+                </h2>
+            </div>
+            <div className="w-full h-[x] ">
+                <p
+                    className=" mt-16 italic text-center font-[cursive] text-amber-900"
+                >
+                    Everyone should live with a little more green!
+                </p>
+                <p className="mx-24 text-center font-[cursive] text-xl leading-9 mt-8 text-amber-900">
+                    {
+                        "HL-Plants is here to help strengthen your relationship with plants. We make buying plants easy by delivering healthy, ready-to-go plants to your door and setting you up with the tips and tricks you need to help your plants thrive. Plants make life better. We make plants easy."
+                    }
+                </p>
+            </div>
+            <div className="mt-12 w-full h-[1080px] bg-gray-300">
+                <div className="flex justify-between mt-16  items-center w-full">
+                    <img
+                        className="h-[480px] mx-24 mt-16"
+                        src="https://bloomscape.com/wp-content/uploads/2020/05/about-from-greenhouse.png?ver=205033"
+                        alt="nature image"
+                    />
+                    <div className="flex flex-col mr-24 mt-16 w-full">
+                        <h2 className="text-2xl font-bold font-[cursive]">
+                            Direct From the Greenhouse
+                        </h2>
+                        <p className="font-[cursive] text-xl text-left leading-9 mt-4">
+                            When you buy a houseplant from a box store or nursery, it probably
+                            spends an average of four weeks traveling from a greenhouse to a
+                            drafty warehouse on a hot or cold truck. Then, it’s shipped to a
+                            store where it likely isn’t getting the water, light, or care it
+                            needs to thrive. With HL-Plants, our plants are cared for by plant
+                            experts and kept in optimal conditions at our greenhouse where
+                            they’re shipped directly to you. So instead of your plant spending
+                            4 weeks in an uncontrolled environment, it spends 3-4 days going
+                            from our greenhouse to your front door. This means your plants
+                            arrive healthy and already thriving.
+                        </p>
                     </div>
                 </div>
+                <div className="flex justify-between mt-16 items-center">
+                    <div className="flex flex-col mx-24">
+                        <h2 className="text-2xl font-bold font-[cursive]">
+                            Shipped to Your Door
+                        </h2>
+                        <p className="font-[cursive] text-xl text-left leading-9 mt-4">
+                            Our plants are shipped with care and experience. We’ve learned how
+                            to keep plants at the right temperature, protect their roots, and
+                            keep them healthy while they travel from our greenhouse to your
+                            home. Our innovative packaging holds plants securely in place,
+                            preventing damage and decreasing soil spillage. Most shipments
+                            will arrive in under a week and all plants will be healthy,
+                            undamaged, and ready for you to enjoy.
+                        </p>
+                    </div>
+                    <img
+                        className="h-[400px] mr-24"
+                        src="https://cdn.redstagfulfillment.com/wp-content/uploads/plant-and-box-1140x760.jpeg"
+                        alt="nature image"
+                    />
+                </div>
+            </div>
+            <div className="w-full">
+                <section className="bg-cover z-10 bg-no-repeat bg-center">
+                    <div className="container mx-auto px-4 z-10 my-10 flex flex-col items-start">
+                        <p
+                            className="text-center z-10 font-[cursive] text-teal-950 mb-4"
+                        >
+                            Contact us
+                        </p>
+
+                        <div className="flex items-center gap-2">
+                            <FcSms />
+                            <p
+                                className="text-center z-10 font-[cursive] text-teal-950"
+                            >
+                                Email: support@hl-plants.com
+                            </p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <FcPhone />
+                            <p
+                                className="text-center z-10 font-[cursive] text-teal-950"
+                            >
+                                Phone: 0339 144 556
+                            </p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <IoLocationSharp />
+                            <p
+                                className="text-center z-10 font-[cursive] text-teal-950"
+                            >
+                                Address: Ta Quang Buu st., Dong Hoa district , Di An city, Binh Duong province.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </div>
-    // )
-);
+    );
+};
+
 export default About;
+
+// const Blogs = () => {
+//     return (
+//         <section className="w-full h-full">
+//             <div className="w-full relative h-[500px]">
+//                 <img
+//                     className="absolute top-0 left-0 z-0 static object-cover h-full w-full"
+//                     src="https://images6.alphacoders.com/109/1098127.jpg"
+//                     alt="nature image"
+//                 />
+//                 <h1 className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-orange-100 font-[cursive] text-4xl">
+//                     BLOGS
+//                 </h1>
+//             </div>
+//         </section>
+//     );
+// }
+
+// export default Blogs;

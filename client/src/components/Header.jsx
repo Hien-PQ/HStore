@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import logo from '../assets/logo.png'
 import Search from './Search'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -11,6 +11,9 @@ import UserMenu from './UserMenu';
 import { DisplayPriceInRupees } from '../utils/DisplayPriceInRupees';
 import { useGlobalContext } from '../provider/GlobalProvider';
 import DisplayCartItem from './DisplayCartItem';
+// import {
+//     MdNotificationsActive,
+// } from "react-icons/md";
 
 const Header = () => {
     const [isMobile] = useMobile()
@@ -57,7 +60,7 @@ const Header = () => {
     // },[cartItem])
 
     return (
-        <header className='h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white'>
+        <header className='h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-gray-50 border-b border-gray-200'>
             {
                 !(isSearchPage && isMobile) && (
                     <div className='container mx-auto flex items-center px-2 justify-between'>
@@ -86,6 +89,15 @@ const Header = () => {
                             <Search />
                         </div>
 
+                        {/* <div className='flex items-center gap-4 text-neutral-600 bg-gray-50 hover:bg-gray-200 p-1 rounded-full transition-all duration-200'>
+                            <div className='relative'>
+                                <Link to={"/notification"} className='text-neutral-600'>
+                                    <MdNotificationsActive size={26} />
+                                </Link>
+                                <span className='absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs'>{1}</span>
+                            </div>
+                        </div> */}
+
 
                         {/**login and my cart */}
                         <div className=''>
@@ -95,12 +107,54 @@ const Header = () => {
                             </button>
 
                             {/**Desktop**/}
-                            <div className='hidden lg:flex  items-center gap-10'>
+                            <div className='hidden lg:flex items-center gap-10'>
+                                <button onClick={() => setOpenCartSection(true)} className='flex items-center gap-2 px-3 py-2 rounded text-neutral-500 outline-none border border-gray-800 hover:bg-gray-300 transition-all duration-200'>
+                                    <div className='animate-bounce'>
+                                        <BsCart4 size={26} />
+                                    </div>
+                                    <div className='font-semibold text-sm'>
+                                        {
+                                            cartItem[0] ? (
+                                                <div >
+                                                    {
+                                                        totalQty > 1 ? (
+                                                            <p className='text-xs'>{totalQty} items</p>
+                                                        ) : (
+                                                            <p className='text-xs'>{totalQty} item</p>
+                                                        )
+                                                    }
+                                                    <p >{DisplayPriceInRupees(totalPrice)}</p>
+                                                </div>
+                                            ) : (
+                                                <p >My Cart</p>
+                                            )
+                                        }
+                                    </div>
+                                </button>
                                 {
                                     user?._id ? (
-                                        <div className='relative'>
+                                        <div className='relative text-neutral-600 bg-gray-50 hover:bg-gray-200 p-2 rounded-full transition-all duration-200'>
                                             <div onClick={() => setOpenUserMenu(preve => !preve)} className='flex select-none items-center gap-1 cursor-pointer'>
-                                                <p>Account</p>
+                                                {/* <FcSettings /> */}
+                                                {
+                                                    user?.avatar ? (
+                                                        <div className='w-8 h-8 rounded-full overflow-hidden'>
+                                                            <img
+                                                                src={user?.avatar || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}
+                                                                alt='profile'
+                                                            />
+                                                        </div>
+                                                    ) : (
+                                                        <div className='w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center'>
+                                                            <FaRegCircleUser size={30} />
+                                                        </div>
+                                                    )
+                                                }
+                                                {/* <p>Account</p> */}
+                                                {user?.name ? (
+                                                    <span className='text-sm font-semibold font-[cursive]'>{user.name}</span>
+                                                ) : {}}
+
                                                 {/* <div className='w-8 h-8 rounded-full overflow-hidden'>
                                                 <img
                                                     src={user?.profileImage || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}
@@ -128,27 +182,10 @@ const Header = () => {
 
                                         </div>
                                     ) : (
-                                        <button onClick={redirectToLoginPage} className='text-lg px-2'>Login</button>
+                                        <button onClick={redirectToLoginPage} className='text-lg text-neutral-600 bg-gray-50 hover:bg-gray-200 rounded-full transition-all duration-200 px-4 py-2'>Login</button>
                                     )
                                 }
-                                <button onClick={() => setOpenCartSection(true)} className='flex items-center gap-2 bg-green-800 hover:bg-green-700 px-3 py-2 rounded text-white'>
-                                    {/**add to card icons */}
-                                    <div className='animate-bounce'>
-                                        <BsCart4 size={26} />
-                                    </div>
-                                    <div className='font-semibold text-sm'>
-                                        {
-                                            cartItem[0] ? (
-                                                <div>
-                                                    <p>{totalQty} Items</p>
-                                                    <p>{DisplayPriceInRupees(totalPrice)}</p>
-                                                </div>
-                                            ) : (
-                                                <p>My Cart</p>
-                                            )
-                                        }
-                                    </div>
-                                </button>
+
                             </div>
                         </div>
                     </div>

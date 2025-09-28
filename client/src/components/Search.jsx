@@ -1,6 +1,7 @@
 // import React, 
 import { useEffect, useState } from 'react'
-import { IoSearch } from "react-icons/io5";
+// import { IoSearch } from "react-icons/io5";
+import { FcSearch } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import { FaArrowLeft } from "react-icons/fa";
@@ -32,7 +33,7 @@ const Search = () => {
     }
 
     return (
-        <div className='w-full  min-w-[300px] lg:min-w-[420px] h-11 lg:h-12 rounded-lg border overflow-hidden flex items-center text-neutral-500 bg-slate-50 group focus-within:border-primary-200 '>
+        <div className='w-full  min-w-[300px] lg:min-w-[820px] h-11 lg:h-12 rounded-lg border overflow-hidden flex items-center text-neutral-500 bg-slate-50 group focus-within:border-primary-200 '>
             <div>
                 {
                     (isMobile && isSearchPage) ? (
@@ -41,7 +42,8 @@ const Search = () => {
                         </Link>
                     ) : (
                         <button className='flex justify-center items-center h-full p-3 group-focus-within:text-primary-200'>
-                            <IoSearch size={22} />
+                            {/* <IoSearch size={22} /> */}
+                            <FcSearch size={22} />
                         </button>
                     )
                 }
@@ -50,7 +52,7 @@ const Search = () => {
                 {
                     !isSearchPage ? (
                         //not in search page
-                        <div onClick={redirectToSearchPage} className='w-full h-full flex items-center'>
+                        <div onClick={redirectToSearchPage} className='w-full h-full flex items-center font-[cursive]'>
                             <TypeAnimation
                                 sequence={[
                                     // Same substring at the start will only be typed out once, initially
@@ -85,7 +87,7 @@ const Search = () => {
                                 placeholder='Search for anyone you want.'
                                 autoFocus
                                 defaultValue={searchText}
-                                className='bg-transparent w-full h-full outline-none'
+                                className='bg-transparent w-full h-full outline-none font-[cursive] placeholder:text-neutral-500'
                                 onChange={handleOnChange}
                             />
                         </div>

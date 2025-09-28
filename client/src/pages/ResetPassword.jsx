@@ -87,7 +87,7 @@ const ResetPassword = () => {
 
     return (
         <section className='w-full container mx-auto px-2'>
-            <div className='bg-blue-200 my-4 w-full max-w-lg mx-auto rounded p-7'>
+            <div className='bg-[#fbfcfd] my-4 w-full max-w-lg mx-auto rounded p-7 border shadow-lg'>
                 <p className='font-semibold text-lg'>Enter Your Password </p>
                 <form className='grid gap-4 py-4' onSubmit={handleSubmit}>
                     <div className='grid gap-1'>

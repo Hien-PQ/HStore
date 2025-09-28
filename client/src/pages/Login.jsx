@@ -81,9 +81,9 @@ const Login = () => {
 
 
     return (
-        <section className='w-full container mx-auto px-2'>
-            <div className='bg-blue-200 my-4 w-full max-w-lg mx-auto rounded p-7'>
-                <h1 className='font-semibold text-lg'>Login to your account</h1>
+        <section className='w-full container mx-auto px-2 md:px-0'>
+            <div className='bg-[#fbfcfd] my-4 w-full max-w-lg mx-auto rounded p-7 shadow-lg border'>
+                <h1 className='font-semibold text-lg '>Login to your account</h1>
                 <form className='grid gap-4 py-4' onSubmit={handleSubmit}>
                     <div className='grid gap-1'>
                         <label htmlFor='email'>Enter your email address:</label>
@@ -127,7 +127,7 @@ const Login = () => {
                 </form>
 
                 <div>
-                    <p className='justify-center flex items-center text-gray-500'>
+                    <p className='justify-center flex items-center text-gray-600'>
                         Don`t have an account? <Link to={"/register"} className='font-semibold text-green-700 hover:text-green-800 ml-2'>Register</Link>
                     </p>
                 </div>

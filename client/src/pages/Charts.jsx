@@ -4,8 +4,9 @@ import {
     XAxis, YAxis, CartesianGrid,
     //  Legend, 
     Tooltip, Area, AreaChart,
-
 } from 'recharts';
+import { BsClipboardData } from 'react-icons/bs';
+
 const data = [
     { name: 'March', User: 100, Viewer: 240, amt: 2400 },
     { name: 'April', User: 300, Viewer: 139, amt: 2210 },
@@ -20,7 +21,10 @@ const About = () => {
     return (
 
         <div className="flex flex-col justify-center items-center text-2xl font-bold">
-            <h1 className="mb-4">Data User Statistics</h1>
+            <h1 className="mb-4 flex items-center gap-2">
+                <BsClipboardData />
+                Data User Statistics
+            </h1>
             <div className="flex items-center justify-center py-4 text-2xl font-bold">
                 <AreaChart width={1230} height={650} data={data}
                     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>

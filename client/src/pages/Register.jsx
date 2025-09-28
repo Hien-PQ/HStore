@@ -21,6 +21,7 @@ const Register = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target
+        console.log(name, value);
 
         setData((preve) => {
             return {
@@ -73,8 +74,8 @@ const Register = () => {
     }
     return (
         <section className='w-full container mx-auto px-2'>
-            <div className='bg-blue-200  my-4 w-full max-w-lg mx-auto rounded p-7'>
-                <p className='font-bold'>Welcome to HStore</p>
+            <div className='bg-[#fbfcfd]  my-4 w-full max-w-lg mx-auto rounded p-7 border shadow-lg '>
+                <p className='mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900'>Welcome to HStore</p>
 
                 <form className='grid gap-4 mt-6' onSubmit={handleSubmit}>
                     <div className='grid gap-1'>
@@ -97,7 +98,7 @@ const Register = () => {
                             id='email'
                             className=' p-2 border rounded outline-none focus:border-primary-200'
                             name='email'
-                            value={data.email}
+                            value={data.email.toLowerCase()}
                             onChange={handleChange}
                             placeholder='abc@gmail.com'
                         />
