@@ -25,7 +25,6 @@ import Success from "../pages/Success";
 import Cancel from "../pages/Cancel";
 import About from "../pages/About";
 import Admin from "../layouts/Admin";
-import Charts from "../pages/Charts";
 import Blogs from "../pages/Blogs";
 import AnExample from "../pages/AnExample";
 import Notification from "../pages/Notification";
@@ -124,10 +123,10 @@ const router = createBrowserRouter([
                         path: 'upload-product',
                         element: <AdminPermision><UploadProduct /></AdminPermision>
                     },
-                    {
-                        path: 'charts',
-                        element: <AdminPermision><Charts /></AdminPermision>
-                    },
+                    // {
+                    //     path: 'charts',
+                    //     element: <AdminPermision><Charts /></AdminPermision>
+                    // },
                     {
                         path: 'product',
                         element: <AdminPermision><ProductAdmin /></AdminPermision>
